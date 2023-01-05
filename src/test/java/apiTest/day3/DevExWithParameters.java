@@ -1,13 +1,11 @@
-package apiTest;
+package apiTest.day3;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.get;
 
 public class DevExWithParameters {
