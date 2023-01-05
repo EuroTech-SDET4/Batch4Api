@@ -62,5 +62,6 @@ public class simpleGetRequest {
      //   System.out.println("response.body().asString() = " + response.body().asString());
 
         Assert.assertTrue(response.body().asString().contains("Stephen Curry"));
+
     }
 }
