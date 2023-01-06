@@ -2,9 +2,12 @@ package apiTest.day2;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class simpleGetRequest {
 
@@ -35,6 +38,8 @@ public class simpleGetRequest {
      //   response.prettyPrint();
 
         Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
+
+
 
     }
 

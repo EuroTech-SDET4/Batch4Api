@@ -4,6 +4,9 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.testng.Assert.*;
 
 
@@ -72,5 +75,21 @@ And "cats" should be in payload/ body
 
 
 
+    }
+
+    @Test
+    public void queryParamWithMap() {
+
+        Map<String,Object> queryMap = new HashMap<>();
+        queryMap.put("status","available");
+     //   queryMap.put("status","sold");
+
+
+
+        Response response = RestAssured.given().accept(ContentType.JSON)
+                .and().queryParams(queryMap)
+                .when().get(petURL + "/pet/findByStatus");
+        response.prettyPrint();
+        assertEquals(response.statusCode(),200);
     }
 }
