@@ -31,6 +31,7 @@ public class DevExWithJsonPath {
 
         JsonPath jsonPath = response.jsonPath();
 
+
         int userId = jsonPath.getInt("id");
         System.out.println("userId = " + userId);
 
