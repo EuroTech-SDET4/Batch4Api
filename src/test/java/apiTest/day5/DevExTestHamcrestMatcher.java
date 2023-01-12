@@ -44,9 +44,7 @@ public class DevExTestHamcrestMatcher {
 
         String expectedEmail = "eurotech@gmail.com";
 
-        given().accept(ContentType.JSON)
-                .queryParam("id", 528)
-                .when()
+        given().accept(ContentType.JSON).queryParam("id", 528).when()
                 .get("api/profile/userQuery")
                 .then().assertThat()
                 .statusCode(200)
