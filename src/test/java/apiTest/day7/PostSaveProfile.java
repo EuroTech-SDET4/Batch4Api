@@ -156,4 +156,5 @@ public class PostSaveProfile {
     // register new user
     //save new user pfofile
     //verify user informartion using JSONPATH and Hamcrest Matcher
+    //at least 2 different user ....
 }
