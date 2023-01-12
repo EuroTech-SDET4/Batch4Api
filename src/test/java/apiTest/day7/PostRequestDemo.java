@@ -106,4 +106,25 @@ public class PostRequestDemo {
 
 
     }
+
+    @Test
+    public void postNewUser4() {
+
+        NewUserInfo newUserInfo = new NewUserInfo("gson@gmail.com","Test1223","Gson JR","gsonGoogle","gsonFace","gsonGithub");
+
+        Response response = given().accept(ContentType.JSON)
+                .and()
+                .contentType(ContentType.JSON)
+                .and()
+                .body(newUserInfo) //serialization
+                .when()
+                .post("api/users");
+
+        assertEquals(response.statusCode(),200);
+        response.prettyPrint();
+
+        assertTrue(response.body().asString().contains("token"));
+
+
+    }
 }
