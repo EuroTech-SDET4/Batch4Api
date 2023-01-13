@@ -44,8 +44,8 @@ public class DevExWithParameters {
         int petID=9;
 
         Response response = RestAssured.given().accept(ContentType.JSON)
-                .and().pathParam("userID", petID)
-                .when().get(petURL + "/pet/{userID}");
+                .and().pathParam("id", petID)
+                .when().get(petURL + "/pet/{id}");
         assertEquals(response.statusCode(),200);
     }
 }

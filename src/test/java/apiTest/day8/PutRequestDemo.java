@@ -81,7 +81,43 @@ public class PutRequestDemo {
                 .log().all()
                 .assertThat().statusCode(204);
 
+    }
 
+    @Test
+    public void updateExperiencesWithPatchMethod() {
+
+        Map<String,Object> experienceBody= new HashMap<>();
+        experienceBody.put("title","Developer");
+        experienceBody.put("company","BMW");
+
+        given().log().all()
+                .and()
+                .contentType(ContentType.JSON)
+                .and()
+                .headers(Authorization.getAccessToken("eurotech@gmail.com","Test12345!"))
+                .and()
+                .pathParam("id",240)
+                .and()
+                .body(experienceBody)
+                .when()
+                .patch("api/profile/experience/{id}")
+                .then().log().all()
+                .assertThat().statusCode(204);
+    }
+
+    @Test
+    public void deleteExperience() {
+
+        given().log().all()
+                .and().contentType(ContentType.JSON)
+                .and()
+                .header("x-auth-token",Authorization.getToken())
+                .and()
+                .pathParam("id",282)
+                .and()
+                .delete("api/profile/experience/{id}")
+                .then().log().all()
+                .assertThat().statusCode(200);
 
     }
 }
