@@ -44,7 +44,6 @@ public class PostRequestDemo {
         assertEquals(response.statusCode(),200);
         response.prettyPrint();
 
-        // "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1ODZ9LCJpYXQiOjE2NzM1NDU0NTIsImV4cCI6MTY3MzkwNTQ1Mn0.SWfGKfMFUHWAcY8WlHqHnZp02XSdr7T8CWGNY2E04vU"
 
         assertTrue(response.body().asString().contains("token"));
 
